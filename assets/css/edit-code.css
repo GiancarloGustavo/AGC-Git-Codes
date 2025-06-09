@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.35s linear;
+    scroll-behavior: smooth;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+
+button{
+    cursor: pointer;
+}
+
+:root{
+    --glass: blur(2px);
+    --background-primary: rgba(0, 0, 0, 0.15);
+    --backgroud-secondary: rgba(0, 0, 0, 0.35);
+    --btn-primary: linear-gradient(to right, rgb(107, 14, 107), rgb(12, 12, 148));  
+    --color-dark-theme: #17fff3;
+}
+
+.fa-solid{
+    cursor: pointer;
+}
+body{
+    height: 100svh;
+    width: 100svw;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+body.light{
+    background: linear-gradient(to right, rgb(129, 14, 129), rgb(15, 15, 189));
+    color: #ffffff;
+}
+body.dark{
+    background: radial-gradient(circle, #111111, #333333);
+    color: #17fff3;
+}
+
+/* Header's style */
+
+header{
+    width: auto;
+    height: 100%;
+    background: var(--background-primary);
+    backdrop-filter: var(--glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1.9px solid #17fff3;
+    position: relative;
+    z-index: 1000;
+}
+
+header .header-page-container{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px ;
+}
+header .header-page-container .page-logo{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .page-logo .logo-image{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: url(../images/favicon-96x96.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+header .header-page-container .back{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .back i{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+/* Main's style */
+
+main{
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+main .container{
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+main .container .title-code{
+    background: var(--btn-primary);
+    padding: clamp(3.5px, 3.5vw, 7px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--color-dark-theme);
+}
+
+main .container .code-container{
+    width: 100%;
+}
+
+main .container .code-container form{
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: clamp(4px, 3.5vw, 8px);
+    padding: clamp(2px, 3.5vw, 4px);
+}
+main .container .code-container form .code-title,
+main .container .code-container form .code-description,
+main .container .code-container form .code-type-html,
+main .container .code-container form .code-type-css,
+main .container .code-container form .code-type-js{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+main .container .code-container form .code-type-html,
+main .container .code-container form .code-type-css,
+main .container .code-container form .code-type-js{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .container .code-container form .code-title input{
+    width: 80%;
+    padding: clamp(5px, 3.5vw, 9px);
+    border-radius: 8px;
+    outline: none;
+    border-bottom: 1px solid var(--color-dark-theme);
+    border-right: 1px solid var(--color-dark-theme);
+    background: #17fff313;
+    color: var(--color-dark-theme);
+    font-weight: bold;
+}
+main .container .code-container form .code-description textarea{
+    width: 80%;
+    padding: clamp(15px, 3.5vw, 25px);
+    border-radius: 8px;
+    outline: none;
+    border-bottom: 1px solid var(--color-dark-theme);
+    border-right: 1px solid var(--color-dark-theme);
+    background: #17fff313;
+    color: var(--color-dark-theme);
+    font-weight: bold;
+}
+main .container .code-container form .code-type-html textarea,
+main .container .code-container form .code-type-css textarea,
+main .container .code-container form .code-type-js textarea{
+    width: 80%;
+    height: clamp(300px, 3.5vw, 370px);
+    padding: clamp(10px, 3.5vw, 14px);
+    border-radius: 8px;
+    outline: none;
+    border-bottom: 1px solid var(--color-dark-theme);
+    border-right: 1px solid var(--color-dark-theme);
+    background: #17fff313;
+    color: var(--color-dark-theme);
+    font-weight: bold;
+}
+
+main .container form p{
+    width: 100%;
+    background: var(--btn-primary);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--color-dark-theme);
+    border-bottom: 1px solid var(--color-dark-theme);
+}
+
+main .container form .button-submit{
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+}
+main .container form .button-submit button{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-dark-theme);
+    background: var(--btn-primary);
+    font-weight: bold;
+    padding: 10px;
+}

@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.35s linear;
+    scroll-behavior: smooth;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+
+:root{
+    --glass: blur(2px);
+    --background-primary: rgba(0, 0, 0, 0.15);
+    /* --backgroud-secondary: rgba(0, 0, 0, 0.35); */
+    --btn-primary: linear-gradient(to right, rgb(107, 14, 107), rgb(12, 12, 148));
+    --btn-secondary: rgb(84, 14, 84);
+    --color-dark-theme: #17fff3;
+}
+
+.fa-solid{
+    cursor: pointer;
+}
+body{
+    height: 100svh;
+    width: 100svw;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+body.light{
+    background: linear-gradient(to right, rgb(129, 14, 129), rgb(15, 15, 189));
+    color: #ffffff;
+}
+body.dark{
+    background: radial-gradient(circle, #111111, #333333);
+    color: #17fff3;
+}
+
+/* Header's style */
+
+header{
+    width: auto;
+    height: 100%;
+    background: var(--background-primary);
+    backdrop-filter: var(--glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1.9px solid #17fff3;
+}
+
+header .header-page-container{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px ;
+}
+header .header-page-container .page-logo{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .page-logo .logo-image{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: url(../images/favicon-96x96.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+header .header-page-container .back{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .back i{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* THE MAIN'S STYLE */
+
+main{
+    width: 100%;
+    height: 100%;
+}
+
+main .container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+main .container .page-title{
+    border-bottom: 1.5px solid var(--color-dark-theme);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(4px, 3.5vw, 9px);
+    background: var(--background-primary);
+    backdrop-filter: var(--glass);
+}
+
+main .container .page-title h1{
+    font-weight: bold;
+    font-size: clamp(22px, 3.5vw, 30px);
+    color: var(--color-dark-theme);
+    text-shadow: 2px 2px 2px #000;
+}
+
+main .container .page-container-info{
+    width: 100%;
+    overflow-y: auto;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+main .container .page-container-info .page-container-title{
+    background: var(--btn-primary);
+    backdrop-filter: var(--glass);
+    border-bottom: 0.5px solid #17fff369;
+    padding: clamp(3.5px, 3.5vw, 6px);
+}
+main .container .page-container-info .page-container-title h4{
+    text-decoration: underline;
+}
+
+main .container .page-container-info .lists{
+    width: 100%;
+}
+main .container .page-container-info .lists ol{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+main .container .page-container-info .lists ol li{
+    padding: clamp(4.5px, 3.5vw, 9px);
+    list-style: none;
+    border-bottom: 1px solid var(--color-dark-theme);
+    font-weight: bold;
+}
+main .container .page-container-info .lists ol li:hover{
+    background: var(--btn-primary);
+    cursor: pointer;
+}
+main .container .page-container-info .lists ol li:active{
+    background: var(--btn-secondary);
+}
+
+main .container .footer{
+    background: var(--background-primary);
+    backdrop-filter: var(--glass);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #17fff31e;
+}
+main .container .footer:hover{
+    background: var(--btn-primary);
+    cursor: pointer;
+}
+main .container .footer:focus{
+    background: var(--btn-secondary);
+}
+main .container .footer .footer-item{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(3px, 3.5vw, 6px);
+}
+main .container .footer .footer-item .copyright{
+    font-weight: bold;
+    font-size: clamp(15px, 3.5px, 18px);
+}
+
+a{
+    color: #fff;
+}

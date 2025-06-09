@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offline</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            transition: all 0.4s ease;
+        }
+        *::-webkit-scrollbar{
+            display: none;
+        }
+        body{
+            height: 100svh;
+            width: 100svw;
+            background: radial-gradient(circle, #000000, #111111, #000000);
+        }
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: clamp(60px, 3.5vw, 80px);
+            background: rgba(0, 0, 0, 0.275);
+            backdrop-filter: blur(2px);
+            border-bottom: 2px solid #17fff3;
+            box-shadow: 0 0 10px #17fff3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header span{
+            font-weight: bold;
+            font-size: clamp(22px, 3.5vw, 32px);
+            text-shadow: 2px 2px 3px #eaff00;
+            color: #17fff3;
+        }
+        main{
+            height: 100svh;
+            width: 100svw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        main p{
+            font-size: clamp(18px, 3.5vw, 23px);
+        }
+        main h1{
+            font-size: clamp(25px, 3.5vw, 35px);
+            text-decoration: underline;
+            color: #17fff3;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <span>Git-codes</span>
+    </header>
+    <main>
+        <h1>Offline</h1>
+        <p>You're are offline, please check your connexion.</p>
+    </main>
+    <script>
+        let header = document.querySelector('header');
+        let headerHeight = header.offsetHeight;
+
+        let main = document.querySelector('main');
+        main.style.paddingTop = `${headerHeight + 10}px`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+
+{
+  "id": "/",
+  "name": "AGC-Git-Codes",
+  "short_name": "AGC",
+  "description": "Collaborative code sharing platform for developers.",
+  "start_url": "index.php",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "./assets/images/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./assets/images/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./assets/images/notification-icon.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/images/desktop1.png",
+      "sizes": "1919x1079",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "assets/images/mobile1.png",
+      "sizes": "401x814",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "assets/images/desktop2.png",
+      "sizes": "1919x1079",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "assets/images/mobile2.png",
+      "sizes": "401x814",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "assets/images/desktop3.png",
+      "sizes": "1919x1079",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "assets/images/mobile3.png",
+      "sizes": "401x814",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "assets/images/desktop4.png",
+      "sizes": "1919x1079",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "assets/images/mobile4.png",
+      "sizes": "401x814",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "lang": "en"
+}

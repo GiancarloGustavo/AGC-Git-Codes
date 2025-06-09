@@ -1,0 +1,292 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.35s linear;
+    scroll-behavior: smooth;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+
+:root{
+    --glass: blur(2px);
+    --background-primary: rgba(0, 0, 0, 0.15);
+    --backgroud-secondary: rgba(0, 0, 0, 0.35);
+    --btn-primary: linear-gradient(to right, rgb(107, 14, 107), rgb(12, 12, 148));
+    --btn-secondary: rgb(84, 14, 84);
+    --color-dark-theme: #17fff3;
+}
+
+.fa-solid{
+    cursor: pointer;
+}
+body{
+    height: 100svh;
+    width: 100svw;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+body.light{
+    background: linear-gradient(to right, rgb(129, 14, 129), rgb(15, 15, 189));
+    color: #ffffff;
+}
+body.dark{
+    background: radial-gradient(circle, #111111, #333333);
+    color: #17fff3;
+}
+
+/* Header's style */
+
+header{
+    width: auto;
+    height: 100%;
+    background: var(--background-primary);
+    backdrop-filter: var(--glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1.9px solid #17fff3;
+}
+
+header .header-page-container{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px ;
+}
+header .header-page-container .page-logo{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .page-logo .logo-image{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: url(../images/favicon-96x96.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+header .header-page-container .back{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .back i{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+
+/* THE MAIN'S STYLE */
+
+main{
+    overflow-y: auto;
+}
+
+main .container{
+    height: 100%;
+}
+
+
+main .container #info-user{
+    width: 100%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.453);
+    backdrop-filter: var(--glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(10px, 3.5vw, 15px);
+    border-bottom: 2px solid var(--color-dark-theme);
+}
+
+main .container #info-user .container-info-user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 3.5vw, 15px);
+    width: 95%;
+}
+main .container #info-user .container-info-user .user-profile-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .container #info-user .container-info-user .user-profile-container .user-profile{
+    border: 5px solid gold;
+    height: 180px;
+    width: 180px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+
+/* FOR THE NAME AND THE EMAIL */
+main .container #info-user .container-info-user .username-email-bio-container{
+    width: auto;
+    height: auto;
+}
+main .container #info-user .container-info-user .username-email-bio-container .username-email-bio-button .button-user-container{
+    display: flex;
+    gap: clamp(4px, 3.5vw, 6px);
+}
+main .container #info-user .container-info-user .username-email-bio-container .username-email-bio-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: clamp(8px, 3.5vw, 14px);
+}
+
+main .container #info-user .container-info-user .username-email-bio-container .username-email-bio-button .username-email-bio{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4px, 3.5vw, 8px);
+}
+
+
+/* FOR THE BUTTON USER */
+
+#btn-contact, #edit-profile{
+    padding: 6px;
+    border: 1px solid var(--color-dark-theme);
+    border-radius: 8px; 
+    font-weight: bold;
+    font-size: clamp(16.5px, 3.5vw, 19px);
+    background: var(--btn-primary);
+    color: var(--color-dark-theme);
+}
+#btn-contact:hover, #edit-profile:hover{
+    transform: translateY(-2.5px);
+    border: 2px solid gold;
+}
+
+@media screen and (max-width: 660px){
+
+    main .container #info-user .container-info-user{
+        flex-direction: column;
+    }
+    main .container #info-user .container-info-user .username-email-bio-container .username-email-bio-button .username-email-bio{
+        text-align: center;
+    }
+    main .container #info-user .container-info-user .username-email-bio-container .username-email-bio-button .button-user-container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+
+
+
+/* FOR THE CODES OF USER NOW */
+
+main .container #code-visited{
+    width: 100%;
+    height: auto;
+}
+main .container #code-visited .container .visited-codes-section{
+   width: 100%;
+   display: grid;
+   grid-template-rows: 35px 1fr;
+}
+main .container #code-visited .container .visited-codes-section .visited-codes-list .visited-code-item:hover{
+    background: var(--btn-primary);
+    color: var(--color-dark-theme);
+    box-shadow: 0 0 5px var(--color-dark-theme);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+main .container #code-visited .container .visited-codes-section h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: var(--glass);
+    border-bottom: 1px solid var(--color-dark-theme);
+}
+main .container #code-visited .container .visited-codes-section .visited-codes-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: clamp(2.5px, 3.5vw, 5px);
+}
+main .container #code-visited .container .visited-codes-section .visited-codes-list li{
+    list-style: none;
+    padding: clamp(7px, 3.5vw, 10px);
+    border: 1px solid var(--color-dark-theme);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: clamp(4px, 3.5vw, 6px);
+}
+main .container #code-visited .container .visited-codes-section .visited-codes-list li a{
+    color: #ffffff;
+    font-size: clamp(15px, 3.5vw, 20px);
+}
+main .container #code-visited .container .visited-codes-section .visited-codes-list li .visit-date{
+    color: #ffffff;
+    font-size: clamp(8px, 3.5vw, 12px);
+}
+
+#code-list-item{
+    padding: clamp(5px, 3.5vw, 9px);
+}
+
+/* THE NOTIFICATION BUTTON */
+
+.notification-container{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.notification-container button{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid gold;
+    font-size: clamp(18px, 3.5vw, 22px);
+    color: var(--color-dark-theme);
+    background: var(--btn-primary);
+}
+.notification-container .notification-count{
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: gold;
+    color: #000;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 3.5px;
+    font-weight: bold;
+    font-size: 17px;
+}
+

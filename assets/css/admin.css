@@ -1,0 +1,449 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.35s linear;
+    scroll-behavior: smooth;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+
+button{
+    cursor: pointer;
+}
+
+:root{
+    --glass: blur(2px);
+    --background-primary: rgba(0, 0, 0, 0.15);
+    --backgroud-secondary: rgba(0, 0, 0, 0.35);
+    --btn-primary: linear-gradient(to right, rgb(107, 14, 107), rgb(12, 12, 148));  
+    --color-dark-theme: #17fff3;
+}
+
+.fa-solid{
+    cursor: pointer;
+}
+body{
+    height: 100svh;
+    width: 100svw;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+body.light{
+    background: linear-gradient(to right, rgb(129, 14, 129), rgb(15, 15, 189));
+    color: #ffffff;
+}
+body.dark{
+    background: radial-gradient(circle, #111111, #333333);
+    color: #17fff3;
+}
+
+/* Header's style */
+
+header{
+    width: auto;
+    height: 100%;
+    background: var(--background-primary);
+    backdrop-filter: var(--glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1.9px solid #17fff3;
+    position: relative;
+    z-index: 1000;
+}
+
+header .header-page-container{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px ;
+}
+header .header-page-container .page-logo{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .page-logo .logo-image{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: url(../images/favicon-96x96.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+header .header-page-container .back{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .back i{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* ALL THE BUTTONS */
+
+main .container .notification-container{
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    z-index: 1000;
+}
+main .container .notification-container button{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid gold;
+    color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--btn-primary);
+    font-weight: bold;
+}
+main .container .notification-container .notification-count{
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--color-dark-theme) ;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background: #000;
+}
+
+
+/* Main's style */
+
+main{
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+main .container{
+    width: 100%;
+}
+main .container .dashboard {
+    width: 100%;
+}
+main .container .dashboard .dashboard-title{
+    width: 100%;
+    background: var(--btn-primary);
+    padding: 6px;
+    border-bottom: 1px solid var(--color-dark-theme);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .container .dashboard .button-messages{
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+}
+main .container .dashboard .button-messages button{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid gold;
+    color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--btn-primary);
+    font-weight: bold;
+}
+
+.fa-solid{
+    font-size: 22px;
+}
+
+main .container .dashboard .all-users{
+    padding: clamp(3.9px, 3.5vw, 7px);
+}
+
+main .container .dashboard .users{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 4px;
+}
+
+main .container .dashboard .users .user-item{
+    height: auto;
+    border: 1px solid var(--color-dark-theme);
+    padding: 5px;
+    border-radius: 8px;
+}
+main .container .dashboard .users .user-item:hover{
+    box-shadow: 0 0 6px var(--color-dark-theme);
+    background: var(--btn-primary);
+    transform: translateY(-2.5px);
+    cursor: pointer;
+}
+main .container .dashboard .users .user-item .user-profile{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+}
+main .container .dashboard .users .user-item .user-profile .user-image{
+    background-position: center;
+    background-size: cover;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-dark-theme);
+    cursor: pointer;
+}
+main .container .dashboard .users .user-item .user-profile .user-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .container .dashboard .users .user-item .bio-user{
+    width: 100%;
+    overflow: auto;
+    padding: 2.5px;
+    margin-top: 3px;
+    margin-left: 8px;
+    color: #fff;
+}
+main .container .dashboard .users .user-item .user-email{
+    width: 100%;
+    overflow: auto;
+    padding: 3px;
+}
+main .container .dashboard .users .user-item .date-join{
+    font-size: 12px;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+/* FOR THE PUBLISH CODES */
+
+main .container .dashboard .publish-codes{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    border-bottom: 10px solid purple;
+    border-top: 10px solid blue;
+    border-right: 10px solid var(--color-dark-theme);
+    border-left: 10px solid gold;
+    top: 0;
+    left: 0;
+    backdrop-filter: var(--glass);
+    background: rgba(0, 0, 0, 0.767);
+    z-index: 30000;
+    transform: translateY(-2500px);
+    overflow-y: auto;
+}
+main .container .dashboard .publish-codes .close{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 70px;
+}
+main .container .dashboard .publish-codes .close .width{
+    width: 100%;
+}
+main .container .dashboard .publish-codes .close .close-i{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+main .container .dashboard .publish-codes.active{
+    transform: translateY(0);}
+
+main .container .dashboard .button-to-publish{
+    position: fixed;
+    right: 20px;
+    bottom: 135px;
+}
+main .container .dashboard .button-to-publish button{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid gold;
+    color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--btn-primary);
+    font-weight: bold;
+}
+
+/* TO PUBLISH NOW */
+
+main .container .dashboard .publish-codes .form-group{
+    width: 100%;
+    padding: 5.90px;
+    /* overflow-y: auto; */
+}
+main .container .dashboard .publish-codes .form-group form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    /* overflow-y: auto; */
+}
+main .container .dashboard .publish-codes .form-group form #submit{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid gold;
+    color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--btn-primary);
+    font-weight: bold;
+    padding: 10px;
+}
+main .container .dashboard .publish-codes .form-group form input{
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 17px;
+    outline: none;
+    border-bottom: 1px solid var(--color-dark-theme);
+    border-right: 1px solid var(--color-dark-theme);
+    background: #17fff31c;
+    color: var(--color-dark-theme);
+}
+main .container .dashboard .publish-codes .form-group form textarea{
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 17px;
+    outline: none;
+    border-bottom: 1px solid var(--color-dark-theme);
+    border-right: 1px solid var(--color-dark-theme);
+    background: #17fff31c;
+    color: var(--color-dark-theme);
+}
+main .container .dashboard .publish-codes .form-group form .text-t{
+    height: clamp(260px, 3.5vw, 320px);
+    width: 100%;
+}
+
+
+/* FOR THE CODES NOW */
+
+main .container .dashboard .admin-all-codes{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    border-bottom: 10px solid purple;
+    border-top: 10px solid blue;
+    border-right: 10px solid var(--color-dark-theme);
+    border-left: 10px solid gold;
+    top: 0;
+    left: 0;
+    backdrop-filter: var(--glass);
+    background: rgba(0, 0, 0, 0.895);
+    z-index: 30000;
+    transform: translateY(2000px);
+    overflow-y: auto;
+}
+main .container .dashboard .admin-all-codes.hide{
+    transform: translateY(0);
+}
+
+main .container .dashboard .admin-all-codes .close-code{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 70px;
+}
+main .container .dashboard .admin-all-codes .close-code .width-code{
+    width: 100%;
+}
+main .container .dashboard .admin-all-codes .close-code .close-i-code{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+main .container .dashboard .show-codes-admin{
+    position: fixed;
+    right: 20px;
+    bottom: 190px;
+}
+main .container .dashboard .show-codes-admin button{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid gold;
+    color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--btn-primary);
+    font-weight: bold;
+}
+
+main .container .dashboard .codes-container{
+    width: 100%;
+}
+main .container .dashboard .admin-all-codes .codes-container .codes-list{
+    width: 100%;
+    padding: clamp(4px, 3.5vw, 8px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: clamp(4px, 3.5vw, 8px);
+}
+main .container .dashboard .admin-all-codes .codes-container .codes-list .code-item{
+    border: 1px solid var(--color-dark-theme);
+    border-radius: 8px;
+    padding: clamp(1.5px, 3.5vw, 3px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3px, 3.5vw, 6px);
+}
+main .container .dashboard .admin-all-codes .codes-container .codes-list .code-item .code-title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: clamp(14px, 3.5vw, 18px);
+}
+main .container .dashboard .admin-all-codes .codes-container .codes-list .code-item .code-date{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: clamp(8px, 3.5vw, 12px);
+    color: rgb(160, 165, 65);
+    cursor: pointer;
+}
+main .container .dashboard .admin-all-codes .codes-container .codes-list .code-item:hover{
+    box-shadow: 0 0 6px var(--color-dark-theme);
+    background: var(--btn-primary);
+}

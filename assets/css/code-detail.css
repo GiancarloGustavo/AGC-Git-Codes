@@ -1,0 +1,506 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.35s linear;
+    scroll-behavior: smooth;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+
+button{
+    cursor: pointer;
+}
+
+:root{
+    --glass: blur(2px);
+    --background-primary: rgba(0, 0, 0, 0.15);
+    --backgroud-secondary: rgba(0, 0, 0, 0.35);
+    --btn-primary: linear-gradient(to right, rgb(107, 14, 107), rgb(12, 12, 148));  
+    --color-dark-theme: #17fff3;
+}
+
+.fa-solid{
+    cursor: pointer;
+}
+
+.fa-brands{
+    font-size: clamp(17px, 3.5vw, 22px);
+    font-weight: bold;
+    color: #17fff3;
+}
+body{
+    height: 100svh;
+    width: 100svw;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+body.light{
+    background: linear-gradient(to right, rgb(129, 14, 129), rgb(15, 15, 189));
+    color: #ffffff;
+}
+body.dark{
+    background: radial-gradient(circle, #111111, #333333);
+    color: #17fff3;
+}
+
+/* Header's style */
+
+header{
+    width: auto;
+    height: 100%;
+    background: var(--background-primary);
+    backdrop-filter: var(--glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1.9px solid #17fff3;
+    position: relative;
+    z-index: 1000;
+}
+
+header .header-page-container{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px ;
+}
+header .header-page-container .page-logo{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .page-logo .logo-image{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: url(../images/favicon-96x96.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+header .header-page-container .back{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .back i{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+/* Now the main's style */
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+main .container{
+    height: 100%;
+    width: 90%;
+    overflow-y: auto;
+}
+
+main .container .switchButton-codesContainer .switchButton-container{
+    height: auto;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: clamp(4px, 3.5vw, 8px);
+    z-index: 900;
+}
+main .container .switchButton-codesContainer .switchButton-container .buttons-switch-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+main .container .switchButton-codesContainer .switchButton-container .buttons-switch-container .html-btn-container,
+main .container .switchButton-codesContainer .switchButton-container .buttons-switch-container .css-btn-container,
+main .container .switchButton-codesContainer .switchButton-container .buttons-switch-container .js-btn-container{
+    width: 100%;
+    display: flex;
+}
+main .container .switchButton-codesContainer .switchButton-container .buttons-switch-container .html-btn-container button,
+main .container .switchButton-codesContainer .switchButton-container .buttons-switch-container .css-btn-container button,
+main .container .switchButton-codesContainer .switchButton-container .buttons-switch-container .js-btn-container button{
+    width: 100%;
+}
+
+main .container .switchButton-codesContainer .switchButton-container .buttons-switch-container .html-btn-container .html-btn{
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: clamp(5px, 3.5vw, 10px);
+    background: var(--btn-primary);
+    color: #17fff3;
+    font-weight: bold;
+    font-size: clamp(17px, 3.5vw, 22px);
+    border: 1px solid #17fff3;
+}
+main .container .switchButton-codesContainer .switchButton-container .buttons-switch-container .css-btn-container .css-btn{
+    padding: clamp(5px, 3.5vw, 10px);
+    background: var(--btn-primary);
+    color: #17fff3;
+    font-weight: bold;
+    font-size: clamp(17px, 3.5vw, 22px);
+    border-top: 1px solid #17fff3;
+    border-bottom: 1px solid #17fff3;
+}
+main .container .switchButton-codesContainer .switchButton-container .buttons-switch-container .js-btn-container .js-btn{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: clamp(5px, 3.5vw, 10px);
+    background: var(--btn-primary);
+    color: #17fff3;
+    font-weight: bold;
+    font-size: clamp(17px, 3.5vw, 22px);
+    border: 1px solid #17fff3;
+}
+main .container .switchButton-codesContainer .switchButton-container .buttons-switch-container .html-btn-container .html-btn.active,
+main .container .switchButton-codesContainer .switchButton-container .buttons-switch-container .css-btn-container .css-btn.active,
+main .container .switchButton-codesContainer .switchButton-container .buttons-switch-container .js-btn-container .js-btn.active{
+    border: 3px solid gold;
+    color: gold;
+    background: var(--btn-primary);
+}
+
+/* for the container codes */
+
+
+main .container .switchButton-codesContainer .codes-container-all .codes-container-html.active,
+main .container .switchButton-codesContainer .codes-container-all .codes-container-css.active,
+main .container .switchButton-codesContainer .codes-container-all .codes-container-js.active{
+    display: block;
+}
+
+/* FOR THE HTML */
+
+main .container .switchButton-codesContainer .codes-container-all .codes-container-html{
+    display: none;
+}
+
+main .container .switchButton-codesContainer .codes-container-all .codes-container-html .code-item-container .html-codes .html-code-header{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 25%;
+    border: 1px solid #17fff3;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: clamp(10px, 3.5vw, 15px);
+    background: var(--btn-primary);
+    color: var(--color-dark-theme);
+}
+main .container .switchButton-codesContainer .codes-container-all .codes-container-html .code-item-container .html-codes .html-code-header .language-tag-span span{
+    font-size: clamp(17.5px, 3.5vw, 22px);
+    font-weight: bold;
+}
+main .container .switchButton-codesContainer .codes-container-all .codes-container-html .code-item-container .html-codes .html-code-header .copy-btn-container button{
+    font-size: clamp(13px, 3.5vw, 16px);
+    font-weight: bold;
+    padding: clamp(1.5px, 3.5vw, 3px);
+    color: var(--color-dark-theme);
+    background: var(--background-primary);
+    border-radius: 7px;
+    border: 1px solid var(--color-dark-theme);
+
+}
+
+/* FOR THE CSS */
+main .container .switchButton-codesContainer .codes-container-all .codes-container-css .code-item-container .css-codes .css-code-header{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 25%;
+    border: 1px solid #17fff3;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: clamp(10px, 3.5vw, 15px);
+    background: var(--btn-primary);
+    color: var(--color-dark-theme);
+}
+main .container .switchButton-codesContainer .codes-container-all .codes-container-css .code-item-container .css-codes .css-code-header .language-tag-span span{
+    font-size: clamp(17.5px, 3.5vw, 22px);
+    font-weight: bold;
+}
+main .container .switchButton-codesContainer .codes-container-all .codes-container-css .code-item-container .css-codes .css-code-header .copy-btn-container button{
+    font-size: clamp(13px, 3.5vw, 16px);
+    font-weight: bold;
+    padding: clamp(1.5px, 3.5vw, 3px);
+    color: var(--color-dark-theme);
+    background: var(--background-primary);
+    border-radius: 7px;
+    border: 1px solid var(--color-dark-theme);
+}
+
+/* FOR THE JAVASCRIPT */
+main .container .switchButton-codesContainer .codes-container-all .codes-container-js .code-item-container .js-codes .js-code-header{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 25%;
+    border: 1px solid #17fff3;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: clamp(10px, 3.5vw, 15px);
+    background: var(--btn-primary);
+    color: var(--color-dark-theme);
+}
+main .container .switchButton-codesContainer .codes-container-all .codes-container-js .code-item-container .js-codes .js-code-header .language-tag-span span{
+    font-size: clamp(17.5px, 3.5vw, 22px);
+    font-weight: bold;
+}
+main .container .switchButton-codesContainer .codes-container-all .codes-container-js .code-item-container .js-codes .js-code-header .copy-btn-container button{
+    font-size: clamp(13px, 3.5vw, 16px);
+    font-weight: bold;
+    padding: clamp(1.5px, 3.5vw, 3px);
+    color: var(--color-dark-theme);
+    background: var(--background-primary);
+    border-radius: 7px;
+    border: 1px solid var(--color-dark-theme);
+}
+
+
+/* the css */
+main .container .switchButton-codesContainer .codes-container-all .codes-container-css{
+    display: none;
+}
+main .container .switchButton-codesContainer .codes-container-all .codes-container-js{
+    display: none;
+}
+
+/* Container ALl */
+
+main .container .switchButton-codesContainer .codes-container-all{
+    width: 100%;
+}
+
+
+/* Unique css */
+
+pre{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: none;
+    border-bottom: 2px solid gold;
+    border-right: 2px solid var(--color-dark-theme);
+    border-left: 2px solid black;
+}
+
+
+/* NOW THE COMMENTS PART */
+
+main .container .container-info-code-and-comments-section{
+    padding: clamp(2px, 3.5vw, 4px);
+}
+main .container .container-info-code-and-comments-section .code-info-primary-container{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3px, 3.5vw, 6px);
+}
+main .container .container-info-code-and-comments-section .code-info-primary-container .code-title-h1 h1{
+    font-weight: bold;
+    font-size: clamp(20px, 3.5vw, 23px);
+    text-decoration: underline;
+    color: var(--color-dark-theme);
+    padding: clamp(2px, 3.5vw, 4px);
+}
+main .container .container-info-code-and-comments-section .code-info-primary-container .code-description-p p{
+    font-weight: bold;
+    font-size: clamp(15px, 3.5vw, 20px);
+    padding: clamp(3.5px, 3.5vw, 7px);
+    margin-left: 8px;
+}
+main .container .container-info-code-and-comments-section .code-info-primary-container{
+    margin: clamp(3.5px, 3.5vh, 7px) 0;
+    border-top: 1px dashed var(--color-dark-theme);
+    border-bottom: 1px dashed var(--color-dark-theme);
+}
+
+main .container .container-info-code-and-comments-section .button-show-comment-fill-form{
+    width: 100%;
+    height: auto;
+    margin: clamp(5px, 3.5vw, 10px) 0;
+}
+main .container .container-info-code-and-comments-section .button-show-comment-fill-form .button-show{
+    width: 70%;
+}
+main .container .container-info-code-and-comments-section .button-show-comment-fill-form .button-show button{
+    width: 90%;
+    font-size: clamp(16px, 3.4px, 20px);
+    padding: clamp(3.5px, 3.4px, 7px);
+    border-radius: 8px;
+    border: 1px solid var(--color-dark-theme);
+    background: var(--btn-primary);
+    color: var(--color-dark-theme);
+    font-weight: bold;
+}
+main .container .container-info-code-and-comments-section .button-show-comment-fill-form .button-show button:hover{
+    transform: translateY(-2.5px);
+}
+
+main .container .container-info-code-and-comments-section .add-comment-container{
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed var(--color-dark-theme);
+    padding-bottom: 18px;
+}
+main .container .container-info-code-and-comments-section .add-comment-container .add-comment-form{
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+main .container .container-info-code-and-comments-section .add-comment-container .add-comment-form form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+main .container .container-info-code-and-comments-section .add-comment-container .add-comment-form textarea{
+    border: none;
+    outline: none;
+    background: #0f4846d3;
+    padding: clamp(4px, 3.5vw, 8px);
+    border-radius: 10px;
+    font-size: clamp(15px, 3.4px, 18.5px);
+    font-weight: bold;
+    color: #ffffff;
+    border-bottom: 1px solid var(--color-dark-theme);
+    border-right: 1px solid var(--color-dark-theme);
+}
+main .container .container-info-code-and-comments-section .add-comment-container .add-comment-form button{
+    font-size: clamp(16px, 3.4px, 20px);
+    padding: clamp(7px, 3.5px, 10px);
+    border-radius: 8px;
+    border: 1px solid var(--color-dark-theme);
+    background: var(--btn-primary);
+    color: var(--color-dark-theme);
+    font-weight: bold;
+}
+main .container .container-info-code-and-comments-section .add-comment-container.hide{
+    display: none;
+}
+main .container .container-info-code-and-comments-section .container-comments-all{
+    padding: 5px;
+    border-radius: 15px;
+}
+main .container .container-info-code-and-comments-section .container-comments-all .comments-container{
+    border: 1px solid #17fff34d;
+    padding: clamp(12px, 3.5px, 16px);
+    border-radius: 10px;
+    max-width: 70%;
+}
+main .container .container-info-code-and-comments-section .container-comments-all .comments-container .comments-img-name{
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+}
+main .container .container-info-code-and-comments-section .container-comments-all .comments-container .comments-img-name img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+}
+main .container .container-info-code-and-comments-section .container-comments-all .comments-container .date{
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#delete-btn{
+    padding: 6px;
+    border: none;
+    background: var(--btn-primary);
+    font-weight: bold;
+    font-size: clamp(15px, 3.5vw, 20px);
+    color: var(--color-dark-theme);
+    border-radius: 8px;
+    border: 1px solid var(--color-dark-theme);
+
+}
+#reply-comment-btn{
+    padding: 6px;
+    border: none;
+    background: var(--btn-primary);
+    font-weight: bold;
+    font-size: clamp(15px, 3.5vw, 20px);
+    color: var(--color-dark-theme);
+    border-radius: 8px;
+    margin-top: 2px;
+    border: 1px solid var(--color-dark-theme);
+}
+
+#delete-btn-admin{
+    padding: 6px;
+    border: none;
+    background: var(--btn-primary);
+    font-weight: bold;
+    font-size: clamp(15px, 3.5vw, 20px);
+    color: var(--color-dark-theme);
+    border-radius: 8px;
+    margin-top: 5px;
+    border: 1px solid var(--color-dark-theme);
+
+}
+
+#textarea-admin{
+    border: none;
+    outline: none;
+    background: #0f4846d3;
+    padding: clamp(4px, 3.5vw, 8px);
+    border-radius: 10px;
+    font-size: clamp(15px, 3.4px, 18.5px);
+    font-weight: bold;
+    color: #ffffff;
+    border-bottom: 1px solid var(--color-dark-theme);
+    border-right: 1px solid var(--color-dark-theme);
+    margin-top: 6px;
+    width: 70%;
+}
+
+
+/* For the admin */
+
+main .container .container-info-code-and-comments-section .reply-comments-admin{
+    margin: 8px auto 6px 22px;
+    background: rgba(255, 217, 0, 0.236);
+    border-left: 5px solid gold;
+    border-radius: 10px;
+    padding: clamp(10px, 3.5vw, 13px);
+
+}
+
+@media screen and (max-width: 900px){
+
+    main .container .container-info-code-and-comments-section .container-comments-all .comments-container{
+        max-width: 100%;
+    }
+
+}
+
+main .container #form-to-edit #edit-code-admin{
+    padding: clamp(3.8px, 3.5vw, 7px);
+    border-radius: 5px;
+    font-weight: bold;
+    color: gold;
+    border: 2px solid gold;
+    background: var(--btn-primary);
+}

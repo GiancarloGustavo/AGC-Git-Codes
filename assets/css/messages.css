@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.35s linear;
+    scroll-behavior: smooth;
+    color: #ffffff;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+
+:root{
+    --glass: blur(2px);
+    --background-primary: rgba(0, 0, 0, 0.15);
+    --backgroud-secondary: rgba(0, 0, 0, 0.35);
+    --btn-primary: linear-gradient(to right, rgb(107, 14, 107), rgb(12, 12, 148));
+    --btn-secondary: rgb(84, 14, 84);
+    --color-dark-theme: #17fff3;
+}
+
+.fa-solid{
+    cursor: pointer;
+}
+body{
+    height: 100svh;
+    width: 100svw;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background: #000;
+}
+
+
+.fa-solid, .fa-regular{
+    color: #17fff3;
+}
+
+/* Header's style */
+
+header{
+    width: auto;
+    height: 100%;
+    background: var(--background-primary);
+    backdrop-filter: var(--glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1.9px solid #17fff3;
+    position: relative;
+    z-index: 2000;
+}
+
+header .header-page-container{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px ;
+}
+header .header-page-container .page-logo{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .page-logo .logo-image{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: url(../images/favicon-96x96.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+header .header-page-container .back{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .back i{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* main's style */
+
+main{
+    background-image: url(../images/backgroundImage.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    position: relative;
+    overflow-y: auto;
+}
+
+main .overlay{
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.682), rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.421), rgba(0, 0, 0, 0.333));
+}
+
+main .container{
+    position: relative;
+    z-index: 999;
+    height: 100%;
+}
+
+main .container .message-title{
+    width: 100%;
+    padding: clamp(10px, 3.5vw, 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #000;
+    background: rgba(0, 0, 0, 0.501);
+    backdrop-filter: var(--glass);
+    box-shadow: 0 0 10px #000;
+}
+
+main .container .form-fill{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.693);
+}
+main .container .form-fill form{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    background: rgba(0, 0, 0, 0.693);
+    border-top: 2px solid #17fff3;
+}
+main .container .form-fill form .chat-input{
+    width: 100%;
+    display: flex;
+    height: auto;
+}
+main .container .form-fill form .message-box-container{
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+main .container .form-fill form .button{
+    width: 100%;
+    display: flex;
+    height: auto;
+}
+main .container .form-fill form .button button{
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    font-size: clamp(20px, 3.5vw, 25px);
+    color: #17fff3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, rgb(87, 13, 87), rgb(17, 17, 108));
+}
+main .container .form-fill form .chat-input textarea{
+    width: 100%;
+    outline: none;
+    padding: clamp(5px, 3.5vw, 10px);
+    background: rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    font-size: clamp(17px, 3.5vw, 22px);
+    color: #ffffff;
+}
+main .container .form-fill form .chat-input textarea:focus{
+    background: #17fff327;
+}
+
+.message {
+    padding: 8px;
+    margin: 5px; 
+    border-radius: 10px;
+    max-width: 70%; 
+    font-weight: bold;
+}
+.message small{
+    font-size: 10px;
+    font-weight: normal;
+}
+.sent {
+    background: rgb(117, 19, 119);
+    margin-left: auto;
+    text-align: right;
+}
+.received { 
+    background: #1d5b9e; 
+    margin-right: auto; 
+    text-align: left; 
+}
+
+#bottom{
+    height: 1px;
+    width: 30px;
+}

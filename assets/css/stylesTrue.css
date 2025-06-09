@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.35s linear;
+    scroll-behavior: smooth;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+
+:root{
+    --glass: blur(2px);
+    --background-primary: rgba(0, 0, 0, 0.15);
+    --backgroud-secondary: rgba(0, 0, 0, 0.35);
+    --btn-primary: linear-gradient(to right, rgb(107, 14, 107), rgb(12, 12, 148));
+    --btn-secondary: rgb(84, 14, 84);
+    --color-dark-theme: #17fff3;
+}
+
+.fa-solid{
+    cursor: pointer;
+}
+body{
+    height: 100svh;
+    width: 100svw;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+body.light{
+    background: linear-gradient(to right, rgb(129, 14, 129), rgb(15, 15, 189));
+    color: #ffffff;
+}
+body.dark{
+    background: radial-gradient(circle, #111111, #333333);
+    color: #17fff3;
+}
+
+/* Header's style */
+
+header{
+    width: auto;
+    height: 100%;
+    background: var(--background-primary);
+    backdrop-filter: var(--glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1.9px solid #17fff3;
+}
+
+header .header-page-container{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px ;
+}
+header .header-page-container .page-logo{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .page-logo .logo-image{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: url(../images/favicon-96x96.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+header .header-page-container .back{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .back i{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+input[type='submit']{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid #17fff3;
+    border-right: 1px solid #17fff3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    background: var(--btn-primary);
+    color: #17fff3;
+    width: 100%;
+    font-size: clamp(16px, 3.5vw, 22px);
+}
+input[type='submit']:hover{
+    transform: translateY(-2.5px);
+}
+label{
+    font-size: clamp(16px, 3.5vw, 25px);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+input[type='email'], 
+input[type='text'], 
+input[type='password']{
+    outline: none;
+    background: transparent;
+    font-size: clamp(16px, 3.5vw, 22px);
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+    padding: clamp(5px, 3.5vw, 10px);
+    border-bottom: 1px solid #17fff3;
+    border-right: 1px solid #17fff3;
+    border-top: none;
+    border-left: none;
+}
+input[type='email']:focus, 
+input[type='text']:focus, 
+input[type='password']:focus{
+    background: #17fff32e;
+}
+
+/* Main's style */
+main{
+    display: grid;
+    grid-template-rows: 1fr;
+}
+main .container{
+    display: grid;
+    grid-template-rows: 15% 1fr;
+    width: 100%;
+}
+main .container .form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+main .container .form form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: clamp(80%, 3.5vw, 60%);
+    width: clamp(80%, 3.5vw, 60%);
+    padding: clamp(8px, 3.5vw, 16px);
+    gap: clamp(8px, 3.5vw, 14px);
+}
+main .container .form form .email,
+main .container .form form .password,
+main .container .form form .username{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5px, 3.5vw, 5px);
+    width: 100%;
+}
+main .container .form form .button-submit{
+    display: flex;
+    width: 100%;
+}
+
+main .container .h2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: clamp(10px, 3.5vw, 20px);
+    background: var(--backgroud-secondary);
+    backdrop-filter: var(--glass);
+    box-shadow: 0 0 8px #000000;
+    text-align: center;
+}
+main .container .h2 h2{
+    font-size: clamp(18px, 3.5vw, 30px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}

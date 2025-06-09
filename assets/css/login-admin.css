@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.35s linear;
+    scroll-behavior: smooth;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+
+button{
+    cursor: pointer;
+}
+
+:root{
+    --glass: blur(2px);
+    --background-primary: rgba(0, 0, 0, 0.15);
+    --backgroud-secondary: rgba(0, 0, 0, 0.35);
+    --btn-primary: linear-gradient(to right, rgb(107, 14, 107), rgb(12, 12, 148));  
+    --color-dark-theme: #17fff3;
+}
+
+.fa-solid{
+    cursor: pointer;
+}
+body{
+    height: 100svh;
+    width: 100svw;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+body.light{
+    background: linear-gradient(to right, rgb(129, 14, 129), rgb(15, 15, 189));
+    color: #ffffff;
+}
+body.dark{
+    background: radial-gradient(circle, #111111, #333333);
+    color: #17fff3;
+}
+
+/* Header's style */
+
+header{
+    width: auto;
+    height: 100%;
+    background: var(--background-primary);
+    backdrop-filter: var(--glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1.9px solid #17fff3;
+    position: relative;
+    z-index: 1000;
+}
+
+header .header-page-container{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px ;
+}
+header .header-page-container .page-logo{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .page-logo .logo-image{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: url(../images/favicon-96x96.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+header .header-page-container .back{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+header .header-page-container .back i{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* MAIN'S STYLE */
+
+main{
+    width: 100%;
+    height: 100%;
+}
+
+main .container{
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+main .container .title-h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(4px, 3.5vw, 8px);
+    background: var(--btn-primary);
+    width: 100%;
+    border-bottom: 1px solid var(--color-dark-theme);
+}
+main .container .title-h1 h1{
+    font-size: clamp(20px, 3.5vw, 27px);
+}
+
+main .container .form-group{
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+main .container .form-group .message-error .message{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(4px, 3.5vw, 8px);
+    background: rgba(255, 0, 0, 0.036);
+}
+main .container .form-group form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20%;
+    gap: clamp(3px, 3.5vw, 6px);
+}
+main .container .form-group form input{
+    padding: clamp(4px, 3.5vw, 8px);
+    outline: none;
+    background: transparent;
+    color: var(--color-dark-theme);
+    font-weight: bold;
+    font-size: clamp(15px, 3.5vw, 20px);
+    border-bottom: 1px solid var(--color-dark-theme);
+    border-right: 1px solid var(--color-dark-theme);
+    border-radius: 10px;
+    width: 70%;
+}
+main .container .form-group form .button{
+    width: 70%;
+    display: flex;
+    padding: clamp(2px, 3.5vw, 4px);
+}
+main .container .form-group form .button button{
+    padding: 5px;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--color-dark-theme);
+    font-weight: bold;
+    font-size: clamp(15px, 3.5vw, 20px);
+    border: 1px solid var(--color-dark-theme);
+}
+main .container .form-group form .button button:hover{
+    background: var(--btn-primary);
+}
+main .container .form-group form input:focus{
+    background: #17fff32b;
+}
+

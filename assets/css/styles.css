@@ -1,0 +1,545 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.35s linear;
+    scroll-behavior: smooth;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+
+:root{
+    --glass: blur(2px);
+    --background-primary: rgba(0, 0, 0, 0.15);
+    --backgroud-secondary: rgba(0, 0, 0, 0.35);
+    --btn-primary: linear-gradient(to right, rgb(107, 14, 107), rgb(12, 12, 148));
+    --btn-secondary: rgb(84, 14, 84);
+    --color-dark-theme: #17fff3;
+}
+
+.fa-solid{
+    cursor: pointer;
+}
+body{
+    height: 100svh;
+    width: 100svw;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+body.light{
+    background: linear-gradient(to right, rgb(129, 14, 129), rgb(15, 15, 189));
+    color: #ffffff;
+}
+body.dark{
+    background: radial-gradient(circle, #111111, #333333);
+    color: #17fff3;
+}
+
+/* buttons */
+.btn-primary{
+    background: var(--btn-primary);
+    color: #17fff3;
+    border: 1px solid gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 13px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    height: 50px;
+    width: 50px;
+}
+
+/* for the burger icons */
+
+.burger{
+    height: 1px;
+    color: #17fff3;
+    background: #17fff3;
+    width: 30px;
+}
+
+.burger-icon-container .burger-icon .btn-primary{
+    flex-direction: column;
+    gap: 5px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.burger-icon-container .burger-icon .btn-primary .one.active{
+    transform: translateY(6px) rotate(45deg);
+}
+.burger-icon-container .burger-icon .btn-primary .two.active{
+    transform: translateX(3000px);
+}
+.burger-icon-container .burger-icon .btn-primary .three.active{
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Header's style */
+
+header{
+    width: auto;
+    height: 100%;
+    background: var(--background-primary);
+    backdrop-filter: var(--glass);
+    top: 0;
+    left: 0;
+    border-right: 1.9px solid #17fff3;
+}
+
+header .header-container{
+    overflow-y: auto;
+}
+
+header .header-container .header-logo-container-burger-open-icon{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(6px, 3.5vw, 12px);
+    padding: clamp(6px, 3.5vw, 12px);
+}
+header .header-container .header-logo-container-burger-open-icon .burger-icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .header-container .header-logo-container-burger-open-icon .header-logo-container-image-logo-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .header-container .header-logo-container-burger-open-icon .header-logo-container-image-logo-name .header-image-logo-name .logo-image{
+    background-image: url('../images/favicon-96x96.png');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+header .header-container .header-logo-container-burger-open-icon .header-logo-container-image-logo-name .header-image-logo-name .logo-name{
+    font-weight: bold;
+    font-size: clamp(18px, 3.5vw, 28px);
+    font-family: 'poppins';
+    color: #17fff3;
+}
+header .header-container .header-logo-container-burger-open-icon .header-logo-container-image-logo-name .header-image-logo-name .logo-name:hover{
+    transform: scale(1.05);
+    color: orange;
+    text-shadow: 0 0 2px #fff;
+}
+header .header-container .header-logo-container-burger-open-icon .header-logo-container-image-logo-name .header-image-logo-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(5px, 3.5vw, 9px);
+}
+
+header .header-container .navigation-container{
+    width: 100%;
+}
+
+header .header-container .navigation-container .navigation-links{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: clamp(25px, 3.5vw, 40px);
+    padding: clamp(6px, 3.5vw, 12px);
+}
+
+header .header-container .navigation-container .navigation-links .links-stand-up{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: clamp(6px, 3.5vw, 12px);
+}
+
+header .navigation-container .navigation-links .links-stand-up-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: clamp(6px, 3.5vw, 12px);
+    height: 422px;
+}
+header .navigation-container .navigation-links .links-stand-up-name div{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .navigation-container .navigation-links .links-stand-up-name div:hover{
+    background: #666;
+    color: #17fff3;
+    padding: 6px;
+    border-radius: 10px;
+}
+header .navigation-container .navigation-links .links-stand-up-name div span{
+    font-size: clamp(18px, 3.5vw, 30px);
+    font-weight: bold;
+}
+
+header .header-container .header-profile{
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    padding: clamp(6px, 3.5vw, 12px);
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+header .header-container .profile-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .header-container .profile-name .span-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(20px, 3.5vw, 30px);
+    font-weight: bold;
+}
+header .header-container .profile-name .span-name:hover{
+    background: #666;
+    padding: 10px;
+    border-radius: 10px;
+    color: #17fff3;
+}
+
+
+
+header .header-container .header-logo-container-burger-open-icon .header-logo-container-image-logo-name.hide{
+    display: none;
+}
+header .header-container .links-stand-up-name.hide{
+    display: none;
+}
+header .header-container .header-profile .profile-name.hide{
+    display: none;
+}
+
+/* Main's style */
+
+main{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+main.mainHide{
+    display: none;
+}
+main .presentation{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .presentation img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .presentation-text{
+    width: 100%;
+    height: auto;
+    padding: clamp(6px, 3.5vw, 15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+main .presentation-text{
+    width: 100%;
+    height: auto;
+    padding: clamp(6px, 3.5vw, 15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--backgroud-secondary);
+    backdrop-filter: var(--glass);
+}
+main .presentation-text p{
+    font-size: clamp(17px, 3.5vw, 25px);
+}
+
+/* for the code section */
+main .section-code{
+    width: 100%;
+    height: auto;
+    margin-top: 2px;
+}
+main .section-code .code-h1{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: clamp(20px, 3.5vw, 30px);
+    background: var(--backgroud-secondary);
+    backdrop-filter: var(--glass);
+}
+main .section-code .code-h1 h1{
+    font-weight: bold;
+    font-size: clamp(20px, 3.5vw, 30px);
+}
+
+main .codes-list{
+    width: 100%;
+    height: auto;
+}
+main .codes-list .code-list-items{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: clamp(7px, 3.5vw, 15px);
+    padding: clamp(6px, 3.5vw, 12px);
+}
+main .codes-list .code-list-items .code-item{
+    height: 210px;
+    border-radius: 10px;
+    background: linear-gradient(to left, rgba(98, 5, 98, 0.519), rgba(19, 19, 133, 0.508));
+    display: grid;
+    grid-template-rows: 24% 1fr 22%;
+    padding: clamp(3px, 3.5vw, 8px);
+}
+main .codes-list .code-list-items .code-item:hover{
+    transform: scale(1.05);
+    border: 1px solid #17fff3;
+    box-shadow: 0 0 8px #17fff3;
+}
+
+main .codes-list .code-list-items .code-item .title-code{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+main .codes-list .code-list-items .code-item .code-details{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    padding: clamp(4px, 3.5vw, 9px);
+}
+main .codes-list .code-list-items .code-item .btn-href{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .codes-list .code-list-items .code-item .btn-href .code-button-author-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    padding: clamp(1px, 3.5vw, 2.5px);
+}
+main .codes-list .code-list-items .code-item .btn-href .code-button-author-container .code-author{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(2px, 3.5vw, 4px);
+    margin-left: -5.5px;
+}
+main .codes-list .code-list-items .code-item .btn-href .code-button-author-container .code-author .code-author-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/favicon-96x96.png);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+main .codes-list .code-list-items .code-item .btn-href .code-button-author-container .code-author .code-author-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: clamp(13px, 3.5vw, 18px);
+}
+main .codes-list .code-list-items .code-item .btn-href .code-button-author-container .code-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .codes-list .code-list-items .code-item .btn-href .code-button-author-container .code-btn button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: clamp(12px, 3.5vw, 15px);
+    border-radius: 10px;
+    padding: clamp(3px, 3.5vw, 6px);
+    border: none;
+    background: var(--btn-secondary);
+    color: #17fff3;
+}
+main .codes-list .code-list-items .code-item .btn-href .code-button-author-container .code-btn button:hover{
+    transform: translateY(-2.5px);
+    border: 1px solid gold;
+}
+
+
+/* For the search */
+
+header .overlay-search{
+    height: 100svh;
+    width: 100svw;
+    background: rgba(0, 0, 0, 0.851);
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: 5px solid #17fff3;
+    z-index: 3000;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    transform: translateY(-3000px);
+}
+header .overlay-search.active{
+    transform: translateY(0);
+}
+
+header .overlay-search .input-btn{
+    padding: clamp(12px, 3.5vw, 24px);
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    gap: clamp(8px, 3.5vw, 16px);
+}
+header .overlay-search .input-btn .btn-i{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .overlay-search .input-btn .btn-i i{
+    font-weight: bold;
+    font-size: clamp(30px, 3.5vw, 40px);
+}
+header .overlay-search .input-btn .input{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+header .overlay-search .input-btn .input input{
+    width: 100%;
+    border-bottom: 1px solid #17fff3;
+    border-right: 1px solid #17fff3;
+    border-radius: 10px;
+    border-left: none;
+    border-top: none;
+    background: transparent;
+    font-size: clamp(16px, 3.5vw, 25px);
+    font-weight: bold;
+    color: #ffffff;
+    padding: clamp(5px, 3.5vw, 10px);
+    outline: none;
+}
+header .overlay-search .input-btn .input input:focus{
+    background: #17fff33f;
+}
+
+header .overlay-search .results{
+    width: 100%;
+    padding: clamp(7px, 3.5vw, 14px);
+}
+header .overlay-search .results #result{
+    height: 450px;
+    overflow-y: auto;
+}
+
+/* If user is not connected */
+header .header-container .info-website-container{
+    margin-top: 60px;
+    padding: clamp(6px, 3.5vw, 12px);
+    display: flex;
+    justify-content: space-between;
+    gap: clamp(6px, 3.5vw, 12px);
+}
+header .header-container .header-profile-no-connexion{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: clamp(6px, 3.5vw, 12px);
+    display: flex;
+    justify-content: space-between;
+}
+header .header-container .header-profile-no-connexion .profile-no-connexion-span-name-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .header-container .header-profile-no-connexion .profile-no-connexion-span-name-container.hide{
+    display: none;
+}
+header .header-container .header-profile-no-connexion .profile-no-connexion-span-name-container .span-name-profile-no-connexion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: -15px; */
+    padding: clamp(6px, 3.5vw, 12px);
+}
+header .header-container .header-profile-no-connexion .profile-no-connexion-span-name-container .span-name-profile-no-connexion:hover{
+    background: #666;
+    border-radius: 10px;
+}
+header .header-container .header-profile-no-connexion .profile-no-connexion-span-name-container .span-name-profile-no-connexion span{
+    font-weight: bold;
+    font-size: clamp(18px, 3.5vw, 25px);
+}
+
+header .header-container .info-website-container .info-stand-up{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+header .header-container .info-website-container .span-name-icon-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 8px;
+}
+header .header-container .info-website-container .span-name-icon-container.hide{
+    display: none;
+}
+header .header-container .info-website-container .span-name-icon-container .info-span-stand-up{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .header-container .info-website-container .span-name-icon-container .info-span-stand-up:hover{
+    background: #666;
+    border-radius: 10px;
+    padding: clamp(2px, 3.5vw, 4px);
+}
+
+header .header-container .info-website-container .span-name-icon-container .info-span-stand-up .info-name span{
+    font-weight: bold;
+    font-size: clamp(18px, 3.5vw, 25px);
+}
